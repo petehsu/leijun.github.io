@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>雷军简介</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 40px 0;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .nav {
+            background-color: #333;
+            padding: 15px 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 30px;
+            font-size: 18px;
+        }
+        
+        .nav a:hover {
+            color: #ddd;
+        }
+        
+        .content {
+            background-color: white;
+            padding: 50px 10%;
+            border-radius: 0;
+            max-width: 1600px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .section {
+            margin-bottom: 60px;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        
+        h1 {
+            font-size: 36px;
+            color: #333;
+            padding-bottom: 10px;
+            margin: 0;
+        }
+        
+        h2 {
+            font-size: 28px;
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+            margin-top: 40px;
+        }
+        
+        .character-img {
+            width: 500px;
+            height: auto;
+            float: right;
+            margin: 0 0 40px 60px;
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            background-color: white;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .character-img:hover {
+            transform: rotate3d(1, 1, 0, 10deg) scale(1.05);
+            cursor: pointer;
+        }
+        
+        .skill {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        
+        p {
+            margin: 1.2em 0;
+            font-size: 16px;
+        }
+        
+        ul {
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+        
+        /* 主题切换按钮样式 */
+        .theme-switch {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            background: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-switch:hover {
+            background: #555;
+        }
+        
+        /* 语言切换按钮样式 */
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-switch:hover {
+            background: #555;
+        }
+        
+        /* 深色模式样式 */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+        
+        .dark-mode .header,
+        .dark-mode .content {
+            background-color: #2d2d2d;
+            color: #fff;
+        }
+        
+        .dark-mode h1,
+        .dark-mode h2 {
+            color: #fff;
+            border-color: #444;
+        }
+        
+        .dark-mode .skill {
+            background-color: #333;
+        }
+        
+        .dark-mode .character-img {
+            background-color: #2d2d2d;
+        }
+        
+        /* 打字机效果样式 */
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #666;
+            white-space: nowrap;
+            margin: 0;
+            letter-spacing: .15em;
+            animation: blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #666 }
+        }
+        
+        .dark-mode .typewriter {
+            border-right-color: #999;
+        }
+        
+        .dark-mode @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #999 }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-switch" onclick="toggleTheme()">
+        深色
+    </button>
+    
+    <button class="lang-switch" onclick="toggleLanguage()">
+        English
+    </button>
+    
+    <div class="header">
+        <h1>雷军</h1>
+    </div>
+    
+    <div class="nav">
+        <a href="#intro">简介</a>
+        <a href="#career">职业生涯</a>
+        <a href="#achievements">主要成就</a>
+        <a href="#quotes">经典语录</a>
+    </div>
+    
+    <div class="content">
+        <img src="img/leijun.png" class="character-img" alt="雷军" />
+        <div class="section" id="intro">
+            <h2>简介</h2>
+            <p>雷军（1969年12月16日－），中国湖北省仙桃市人，无党派人士，知名企业家、天使投资人。现任小米科技董事长兼CEO，金山软件董事长，武汉大学校董。被媒体誉为"中国苹果"小米的创始人和"互联网手机之父"。</p>
+            <p>1987年，雷军毕业于湖北沔阳中学（现湖北省仙桃中学），考入武汉大学计算机科学系。在校期间，他仅用2年时间就修完了大学毕业所需的全部学分。期间与朋友合作成立黄玫瑰工作室，开发了BITLOK加密软件、免疫90杀毒软件等工具软件，并编撰了《深入DOS编程》和《深入Windows编程》两本书。</p>
+        </div>
+        
+        <div class="section" id="career">
+            <h2>职业生涯</h2>
+            <p>1991年毕业后来到北京，就职于北京遥测技术研究所。同年底结识求伯君，1992年初在金山软件的珠海研发部实习，7月正式加入金山软件。他从一名程序员做起，逐步晋升，1998年出任金山软件CEO。</p>
+            <p>2007年，他带领金山在香港成功上市后卸任CEO。2010年4月6日，雷军与林斌等人共同创办小米科技公司。在他的带领下，小米从一家初创企业发展成为世界500强企业、全球第三大智能手机供应商，并建成了全球最大消费类IoT物联网平台。</p>
+            <p>2019年，小米成为世界500强企业之一，同时也是其中最年轻的公司。2023年11月29日，雷军向母校武汉大学捐赠13亿元现金，创中国高校单笔个人现金捐赠纪录。</p>
+        </div>
+        
+        <div class="section" id="achievements">
+            <h2>主要成就</h2>
+            <ul>
+                <li>金山软件董事长</li>
+                <li>小米集团创始人、董事长兼CEO</li>
+                <li>第十二、十三届全国人民代表大会代表</li>
+                <li>第十二届中华全国工商业联合会副主席</li>
+                <li>武汉大学名誉教授、校董</li>
+                <li>2015年入选《时代周刊》"百位最具影响力人物"</li>
+                <li>2019年获"优秀中国特色社会主义事业建设者"称号</li>
+                <li>2019年以96亿美元财富排名福布斯全球亿万富豪榜第143位</li>
+                <li>2021年以230亿美元财富位列《福布斯全球富豪榜》第75名</li>
+            </ul>
+        </div>
+        
+        <div class="section" id="quotes">
+            <h2>经典语录</h2>
+            <div class="skill">
+                <p class="typewriter"></p>
+                <p class="typewriter"></p>
+                <p class="typewriter"></p>
+                <p class="typewriter"></p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 深色模式切换
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const button = document.querySelector('.theme-switch');
+            const isEnglish = document.querySelector('.lang-switch').textContent === 'Chinese';
+            
+            if (document.body.classList.contains('dark-mode')) {
+                button.textContent = isEnglish ? 'Light' : '浅色';
+            } else {
+                button.textContent = isEnglish ? 'Dark' : '深色';
+            }
+        }
+        
+        // 语言切换
+        function toggleLanguage() {
+            const button = document.querySelector('.lang-switch');
+            const themeButton = document.querySelector('.theme-switch');
+            
+            if (button.textContent === 'English') {
+                translateToEnglish();
+                button.textContent = 'Chinese';
+                themeButton.textContent = document.body.classList.contains('dark-mode') ? '浅色' : '深色';
+            } else {
+                translateToChinese();
+                button.textContent = 'English';
+                themeButton.textContent = document.body.classList.contains('dark-mode') ? '浅色' : '深色';
+            }
+        }
+        
+        // 打字机效果函数
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.textContent = '';
+            return new Promise(resolve => {
+                function type() {
+                    if (i < text.length) {
+                        element.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    } else {
+                        resolve();
+                    }
+                }
+                type();
+            });
+        }
+        
+        // 依次显示所有语录
+        async function showQuotes(quotes, isEnglish = false) {
+            const elements = document.querySelectorAll('.typewriter');
+            for (let i = 0; i < elements.length; i++) {
+                await typeWriter(elements[i], quotes[i], 50);
+            }
+        }
+        
+        // 检查元素是否在视图中
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+        
+        // 处理滚动事件
+        let quotesShown = false;
+        function handleScroll() {
+            const quotesSection = document.querySelector('#quotes');
+            if (!quotesShown && isElementInViewport(quotesSection)) {
+                quotesShown = true;
+                const isEnglish = document.querySelector('.lang-switch').textContent === 'Chinese';
+                if (isEnglish) {
+                    const englishQuotes = [
+                        '"Every entrepreneur dreams of changing the world."',
+                        '"Always believe that something wonderful is about to happen."',
+                        '"When you\'re standing in the wind, even a pig can fly."',
+                        '"Xiaomi aims to be a company that lets everyone in the world enjoy technology."'
+                    ];
+                    showQuotes(englishQuotes);
+                } else {
+                    const chineseQuotes = [
+                        '"每一个创业者都怀揣着改变世界的梦想。"',
+                        '"永远相信美好的事情即将发生。"',
+                        '"站在风口上，猪都能飞起来。"',
+                        '"小米要做一家让全球每个人都能享受科技美好生活的公司。"'
+                    ];
+                    showQuotes(chineseQuotes);
+                }
+            }
+        }
+        
+        // 添加滚动监听
+        window.addEventListener('scroll', handleScroll);
+        
+        // 修改英文翻译函数
+        function translateToEnglish() {
+            // 更新标题
+            document.title = "Lei Jun Profile";
+            document.querySelector('h1').textContent = 'Lei Jun';
+            
+            // 更新导航
+            document.querySelector('.nav').innerHTML = `
+                <a href="#intro">Introduction</a>
+                <a href="#career">Career</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#quotes">Quotes</a>
+            `;
+            
+            // 更新简介部分
+            document.querySelector('#intro h2').textContent = 'Introduction';
+            document.querySelector('#intro').querySelectorAll('p')[0].textContent = 
+                'Lei Jun (born December 16, 1969) is a Chinese entrepreneur and angel investor from Xiantao, Hubei Province. He currently serves as the Chairman and CEO of Xiaomi Technology, Chairman of Kingsoft Software, and a board member of Wuhan University. He is known as the founder of "China\'s Apple" Xiaomi and the "Father of Internet Phones".';
+            document.querySelector('#intro').querySelectorAll('p')[1].textContent = 
+                'In 1987, Lei Jun graduated from Hubei Mianyang Middle School (now Hubei Xiantao Middle School) and was admitted to the Computer Science Department of Wuhan University. During his university years, he completed all required credits in just 2 years. He co-founded the Yellow Rose Studio, developed software tools like BITLOK encryption and Immune 90 antivirus, and authored two books: "Deep DOS Programming" and "Deep Windows Programming".';
+            
+            // 更新职业生涯部分
+            document.querySelector('#career h2').textContent = 'Career';
+            const careerParagraphs = document.querySelector('#career').querySelectorAll('p');
+            careerParagraphs[0].textContent = 
+                'After graduating in 1991, he moved to Beijing and worked at Beijing Telemetry Technology Research Institute. Later that year, he met Qiu Bojun and joined Kingsoft Software\'s Zhuhai R&D department as an intern in early 1992, becoming a full-time employee in July. Starting as a programmer, he gradually rose through the ranks and became CEO of Kingsoft in 1998.';
+            careerParagraphs[1].textContent = 
+                'In 2007, after successfully leading Kingsoft\'s IPO in Hong Kong, he stepped down as CEO. On April 6, 2010, Lei Jun co-founded Xiaomi Technology with Lin Bin and others. Under his leadership, Xiaomi has grown from a startup to a Fortune 500 company, becoming the world\'s third-largest smartphone manufacturer and building the world\'s largest consumer IoT platform.';
+            careerParagraphs[2].textContent = 
+                'In 2019, Xiaomi became one of the Fortune 500 companies, being the youngest company on the list. On November 29, 2023, Lei Jun donated 1.3 billion yuan to his alma mater Wuhan University, setting a record for the largest single personal cash donation to a Chinese university.';
+            
+            // 更新成就部分
+            document.querySelector('#achievements h2').textContent = 'Major Achievements';
+            const achievements = [
+                'Chairman of Kingsoft Software',
+                'Founder, Chairman and CEO of Xiaomi Group',
+                'Deputy to the 12th and 13th National People\'s Congress',
+                'Vice Chairman of the 12th All-China Federation of Industry and Commerce',
+                'Honorary Professor and Board Member of Wuhan University',
+                'Named one of TIME Magazine\'s "100 Most Influential People" in 2015',
+                'Awarded "Outstanding Builder of Socialism with Chinese Characteristics" in 2019',
+                'Ranked 143rd on Forbes Global Billionaires List with $9.6 billion in 2019',
+                'Ranked 75th on Forbes Global Billionaires List with $23 billion in 2021'
+            ];
+            document.querySelector('#achievements ul').innerHTML = 
+                achievements.map(item => `<li>${item}</li>`).join('');
+            
+            // 更新语录部分
+            document.querySelector('#quotes h2').textContent = 'Famous Quotes';
+            // 重置打字效果状态
+            quotesShown = false;
+            document.querySelectorAll('.typewriter').forEach(el => el.textContent = '');
+            handleScroll();
+        }
+        
+        // 修改中文翻译函数
+        function translateToChinese() {
+            // 更新标题
+            document.title = "雷军简介";
+            document.querySelector('h1').textContent = '雷军';
+            
+            // 更新导航
+            document.querySelector('.nav').innerHTML = `
+                <a href="#intro">简介</a>
+                <a href="#career">职业生涯</a>
+                <a href="#achievements">主要成就</a>
+                <a href="#quotes">经典语录</a>
+            `;
+            
+            // 更新简介部分
+            document.querySelector('#intro h2').textContent = '简介';
+            document.querySelector('#intro').querySelectorAll('p')[0].textContent = 
+                '雷军（1969年12月16日－），中国湖北省仙桃市人，无党派人士，知名企业家、天使投资人。现任小米科技董事长兼CEO，金山软件董事长，武汉大学校董。被媒体誉为"中国苹果"小米的创始人和"互联网手机之父"。';
+            document.querySelector('#intro').querySelectorAll('p')[1].textContent = 
+                '1987年，雷军毕业于湖北沔阳中学（现湖北省仙桃中学），考入武汉大学计算机科学系。在校期间，他仅用2年时间就修完了大学毕业所需的全部学分。期间与朋友合作成立黄玫瑰工作室，开发了BITLOK加密软件、免疫90杀毒软件等工具软件，并编撰了《深入DOS编程》和《深入Windows编程》两本书。';
+            
+            // 更新职业生涯部分
+            document.querySelector('#career h2').textContent = '职业生涯';
+            const careerParagraphs = document.querySelector('#career').querySelectorAll('p');
+            careerParagraphs[0].textContent = 
+                '1991年毕业后来到北京，就职于北京遥测技术研究所。同年底结识求伯君，1992年初在金山软件的珠海研发部实习，7月正式加入金山软件。他从一名程序员做起，逐步晋升，1998年出任金山软件CEO。';
+            careerParagraphs[1].textContent = 
+                '2007年，他带领金山在香港成功上市后卸任CEO。2010年4月6日，雷军与林斌等人共同创办小米科技公司。在他的带领下，小米从一家初创企业发展成为世界500强企业、全球第三大智能手机供应商，并建成了全球最大消费类IoT物联网平台。';
+            careerParagraphs[2].textContent = 
+                '2019年，小米成为世界500强企业之一，同时也是其中最年轻的公司。2023年11月29日，雷军向母校武汉大学捐赠13亿元现金，创中国高校单笔个人现金捐赠纪录。';
+            
+            // 更新成就部分
+            document.querySelector('#achievements h2').textContent = '主要成就';
+            const achievements = [
+                '金山软件董事长',
+                '小米集团创始人、董事长兼CEO',
+                '第十二、十三届全国人民代表大会代表',
+                '第十二届中华全国工商业联合会副主席',
+                '武汉大学名誉教授、校董',
+                '2015年入选《时代周刊》"百位最具影响力人物"',
+                '2019年获"优秀中国特色社会主义事业建设者"称号',
+                '2019年以96亿美元财富排名福布斯全球亿万富豪榜第143位',
+                '2021年以230亿美元财富位列《福布斯全球富豪榜》第75名'
+            ];
+            document.querySelector('#achievements ul').innerHTML = 
+                achievements.map(item => `<li>${item}</li>`).join('');
+            
+            // 更新语录部分
+            document.querySelector('#quotes h2').textContent = '经典语录';
+            // 重置打字效果状态
+            quotesShown = false;
+            document.querySelectorAll('.typewriter').forEach(el => el.textContent = '');
+            handleScroll();
+        }
+    </script>
+</body>
+</html>
